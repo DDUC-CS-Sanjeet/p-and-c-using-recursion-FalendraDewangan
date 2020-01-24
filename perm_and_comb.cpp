@@ -33,13 +33,8 @@ int main()
 {
 	int n,r,choice;
 	char y;
-	cout<<"Enter the value n : ";
-	cin>>n;
-	cout<<"Enter the value r : ";
-	cin>>r;
+	
 	try{
-	if(n>0 && r>0 && n>r)
-	{
 	
 	do
 	{
@@ -52,14 +47,35 @@ int main()
 	switch(choice)
 	{
 		case 1:
+		cout<<"Enter the value n : ";
+		cin>>n;
+		cout<<"Enter the value r : ";
+		cin>>r;
+		if(n>0&&r>0&&n>r)
+		{
 			if(permutation(n,r)>0)
 			cout<<permutation(n,r);
-			break;
+		}	
+		else
+		{
+			throw -1;
+		}
+		break;
 		case 2:
+			cout<<"Enter the value n : ";
+			cin>>n;
+			cout<<"Enter the value r : ";
+			cin>>r;
+		if(n>0&&r>0&&n>r)
+		{
 			if(combination(n,r)>0)
 			cout<<combination(n,r);
-			break;
-	
+		}
+		else 
+		{
+			throw -1;
+		}
+		break;
 		default :
 			cout<<"Invalid choice";
 	}
@@ -69,11 +85,7 @@ int main()
 	
 	}while(y=='y');
 }
-else
-	{
-		throw -1;
-	}
-}
+
 catch(int y)
 {
 	cout<<"Not defined for your input ";
